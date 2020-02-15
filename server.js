@@ -3,6 +3,7 @@ const { Client } = require("pg");
 const PORT = process.env.PORT || 8080;
 const DATABASENAME = "postgres";
 const path = require("path");
+const cors = require('cors');
 
 process.on("uncaughtException", function(err) {
   console.error(err);
@@ -48,6 +49,8 @@ db.query(mockDataSqlCommand, function(err, result) {
 });
 
 const app = express();
+app.use(cors());
+app.options('*', cors());
 
 // Get all products
 app.get("/products", (req, res) => {
