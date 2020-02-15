@@ -1,6 +1,6 @@
 # Webshop-API
 
-Basic CRUD REST API for React Webshop.
+Basic REST API for React Webshop using Node.js, Express and PostgreSQL.
 
 Install dependencies with:
 
