@@ -9,12 +9,8 @@ process.on("uncaughtException", function(err) {
 });
 
 var db = new Client({
-  user: "postgres",
-  password: "postgres",
-  host: "localhost",
-  port: 5432,
-  database: DATABASENAME,
-  multipleStatements: true
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
 });
 
 var mockDataSqlCommand = `
